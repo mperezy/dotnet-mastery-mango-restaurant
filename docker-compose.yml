@@ -1,0 +1,41 @@
+version: "3.1"
+
+services:
+  mango-web:
+    build:
+      context: Mango.Web
+      dockerfile: dev.Dockerfile
+    hostname: mango-web
+    container_name: mango-web
+    ports:
+      - 5040:5001
+    volumes:
+      - ./Mango.Web/:/src
+  
+  product-api:
+    build:
+      context: Mango.Services.ProductAPI
+      dockerfile: dev.Dockerfile
+    hostname: product-api
+    container_name: product-api
+    depends_on:
+      - sql_server
+    ports:
+      - 5050:5002
+    volumes:
+      - ./Mango.Services.ProductAPI/:/src
+  
+  sql_server:
+    build:
+      context: .
+      dockerfile: mssql.dockerfile
+    user: '0:0'
+    hostname: sql-server
+    container_name: sql-server
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: SqlServer.
+      MSSQL_PID: Express
+    stdin_open: true

@@ -1,0 +1,11 @@
+# References
+# https://docs.microsoft.com/en-us/ef/core/cli/dotnet#dotnet-ef-database-update
+# https://github.com/dotnet/dotnet-docker/tree/main/samples/dotnetapp
+# https://stackoverflow.com/questions/59017082/how-to-use-dotnet-watch-run-with-net-core-3-visual-studio-2019-and-docker
+# https://stackoverflow.com/questions/66323260/net-5-error-when-adding-migration-on-entity-framework-core
+
+# Create a database migration
+dotnet ef migrations add AddProductModelToDb
+
+# Update database
+dotnet ef database update
