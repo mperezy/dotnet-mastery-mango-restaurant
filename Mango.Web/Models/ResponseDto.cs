@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Mango.Services.ProductAPI.Models.Dtos
+namespace Mango.Web.Models
 {
-    public class RespondeDto
+    public class ResponseDto
     {
         public bool IsSuccess { get; set; } = true;
         public object Result { get; set; }
