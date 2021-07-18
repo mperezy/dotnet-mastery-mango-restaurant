@@ -365,3 +365,6 @@ FodyWeavers.xsd
 .idea
 docker/
 _intermediate_
+*.zip
+resources/
+.env

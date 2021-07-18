@@ -16,6 +16,8 @@ services:
     build:
       context: Mango.Services.ProductAPI
       dockerfile: dev.Dockerfile
+    env_file:
+      - .env
     hostname: product-api
     container_name: product-api
     depends_on:
