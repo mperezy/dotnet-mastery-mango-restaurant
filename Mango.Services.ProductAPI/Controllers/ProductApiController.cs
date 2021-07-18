@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace Mango.Services.ProductAPI.Controllers
 {
     [Route("api/products")]
-    public class ProductAPIController : Controller
+    public class ProductApiController : Controller
     {
         protected ResponseDto _reponse;
 
         private IProductRepository _productRepository;
 
-        public ProductAPIController(IProductRepository productRepository)
+        public ProductApiController(IProductRepository productRepository)
         {
             this._productRepository = productRepository;
             this._reponse = new ResponseDto();
