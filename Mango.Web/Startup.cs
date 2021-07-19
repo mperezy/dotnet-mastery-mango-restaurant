@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Mango.Web.Services;
 using Mango.Web.Services.IServices;
@@ -26,7 +27,7 @@ namespace Mango.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient<IProductService, ProductService>();
-            SD.ProductAPIBase = Configuration["ServiceUrl:ProductAPI"];
+            SD.ProductAPIBase = Configuration["ServiceUrls:ProductAPI"];
 
             services.AddScoped<IProductService, ProductService>();
             services.AddControllersWithViews();
@@ -46,7 +47,9 @@ namespace Mango.Web
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // To enable HTTPS, uncomment the next line
+            // app.UseHttpsRedirection();
+            
             app.UseStaticFiles();
 
             app.UseRouting();

@@ -10,3 +10,8 @@ dotnet ef migrations add AddProductModelToDb
 
 # Update database
 dotnet ef database update
+
+# Check ports
+lsof -i -P -n | grep LISTEN
+
+curl -X 'GET'   'https://product-api:5002/api/api/products'   -H 'accept: */*'

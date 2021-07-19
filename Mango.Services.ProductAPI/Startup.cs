@@ -62,7 +62,8 @@ namespace Mango.Services.ProductAPI
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mango.Services.ProductAPI v1"));
             }
 
-            app.UseHttpsRedirection();
+            // To enable HTTPS, uncomment the next line
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 

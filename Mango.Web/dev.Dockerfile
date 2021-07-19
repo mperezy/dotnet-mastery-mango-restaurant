@@ -5,6 +5,10 @@ ENV DOTNET_RUNNING_IN_CONTAINER 'true'
 
 WORKDIR /src
 
+RUN apt-get update && \
+apt-get install iputils-ping -y &&\
+apt-get install lsof -y
+
 RUN dotnet dev-certs https
 
-ENTRYPOINT dotnet watch run --urls=https://+:5001 --project "Mango.Web.csproj"
+ENTRYPOINT dotnet watch run --urls=http://+:5001 --project "Mango.Web.csproj"
