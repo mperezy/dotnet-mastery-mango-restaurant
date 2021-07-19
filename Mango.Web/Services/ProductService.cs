@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Mango.Web.Models;
@@ -11,6 +12,8 @@ namespace Mango.Web.Services
         
         public ProductService(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {
+            // Print in terminal
+            // System.Diagnostics.Debug.Write($"********* SD.ProductAPIBase: {SD.ProductAPIBase}");
             this.HttpClientFactory = httpClientFactory;
         }
 
