@@ -3,12 +3,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:50962",
-      "sslPort": 44310
+      "applicationUrl": "http://localhost:13212",
+      "sslPort": 44383
     }
   },
   "profiles": {
-    "Mango.Web": {
+    "Mango.Service.Identity": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

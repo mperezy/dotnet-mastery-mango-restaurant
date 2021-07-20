@@ -8,10 +8,10 @@ services:
     hostname: mango-web
     container_name: mango-web
     ports:
-      - 5040:5001
+      - 5040:5000
     volumes:
       - ./Mango.Web/:/src
-  
+
   product-api:
     build:
       context: Mango.Services.ProductAPI
@@ -23,10 +23,23 @@ services:
     depends_on:
       - sql_server
     ports:
-      - 5050:5002
+      - 5050:5000
     volumes:
       - ./Mango.Services.ProductAPI/:/src
-  
+
+  identity-server:
+    build:
+      context: Mango.Services.Identity
+      dockerfile: dev.Dockerfile
+    hostname: identity-server
+    container_name: identity-server
+    depends_on:
+      - sql_server
+    ports:
+      - 5060:5000
+    volumes:
+      - ./Mango.Services.Identity/:/src
+
   sql_server:
     build:
       context: .
