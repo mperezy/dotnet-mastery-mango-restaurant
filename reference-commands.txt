@@ -4,6 +4,7 @@
 # https://stackoverflow.com/questions/59017082/how-to-use-dotnet-watch-run-with-net-core-3-visual-studio-2019-and-docker
 # https://stackoverflow.com/questions/66323260/net-5-error-when-adding-migration-on-entity-framework-core
 # Course resources: https://www.dotnetmastery.com/attachments/course_19.zip
+# MSSQL-CLI: https://www.mssqltips.com/sqlservertip/5399/upgrading-mssqlcli-and-new-commands/
 
 # Create a database migration
 dotnet ef migrations add AddProductModelToDb
@@ -15,3 +16,8 @@ dotnet ef database update
 lsof -i -P -n | grep LISTEN
 
 curl -X 'GET'   'https://product-api:5002/api/api/products'   -H 'accept: */*'
+
+# To disable SSL certificate varification
+# https://stackoverflow.com/questions/62860290/disable-ssl-certificate-verification-in-default-injected-ihttpclientfactory
+
+dotnet ef migrations add ConfigureDefaultIdentityTables
