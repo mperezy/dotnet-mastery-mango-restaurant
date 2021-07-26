@@ -14,4 +14,4 @@ RUN dotnet tool install --global dotnet-ef --version 6.0.0-preview.6.21352.1
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
-ENTRYPOINT dotnet watch run --urls=http://+:5002 --project "Mango.Services.ProductAPI.csproj"
+ENTRYPOINT dotnet watch run --urls=http://+:5000 --project "Mango.Services.ProductAPI.csproj"

@@ -11,4 +11,6 @@ apt-get install lsof -y
 
 RUN dotnet dev-certs https
 
-ENTRYPOINT dotnet watch run --urls=http://+:5001 --project "Mango.Web.csproj"
+EXPOSE 44310
+
+ENTRYPOINT dotnet watch run --urls=http://+:5000 --project "Mango.Web.csproj"
